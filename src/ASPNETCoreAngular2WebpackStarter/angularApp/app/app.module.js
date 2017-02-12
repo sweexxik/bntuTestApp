@@ -21,6 +21,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { DataService } from './services/DataService';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+import { ProfileComponent } from "./components/profile/profile.component";
+import { ProfileEdit } from "./components/profile/profile_edit.component";
+import { ProfileShow } from "./components/profile/profile_show.component";
+import { FormsModule } from '@angular/forms';
 export var AppModule = (function () {
     function AppModule() {
     }
@@ -31,10 +35,14 @@ export var AppModule = (function () {
                 routing,
                 HttpModule,
                 ToasterModule,
+                FormsModule,
                 SlimLoadingBarModule.forRoot()
             ],
             declarations: [
                 AppComponent,
+                ProfileComponent,
+                ProfileEdit,
+                ProfileShow,
                 HomeComponent,
                 AboutComponent,
                 FooterComponent,

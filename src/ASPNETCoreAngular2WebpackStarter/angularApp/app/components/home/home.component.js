@@ -11,8 +11,10 @@ import { Component } from '@angular/core';
 import { DataService } from '../../services/DataService';
 import { ToasterService } from 'angular2-toaster/angular2-toaster';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
+import { Auth } from "../../auth/auth.service";
 export var HomeComponent = (function () {
-    function HomeComponent(_dataService, _toasterService, _slimLoadingBarService) {
+    function HomeComponent(auth, _dataService, _toasterService, _slimLoadingBarService) {
+        this.auth = auth;
         this._dataService = _dataService;
         this._toasterService = _toasterService;
         this._slimLoadingBarService = _slimLoadingBarService;
@@ -35,7 +37,7 @@ export var HomeComponent = (function () {
             selector: 'home',
             templateUrl: './home.component.html'
         }), 
-        __metadata('design:paramtypes', [DataService, ToasterService, SlimLoadingBarService])
+        __metadata('design:paramtypes', [Auth, DataService, ToasterService, SlimLoadingBarService])
     ], HomeComponent);
     return HomeComponent;
 }());

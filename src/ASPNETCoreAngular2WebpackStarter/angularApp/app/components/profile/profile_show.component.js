@@ -8,18 +8,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { Auth } from '../../auth/auth.service';
-export var NavigationComponent = (function () {
-    function NavigationComponent(auth) {
+import { Auth } from "../../auth/auth.service";
+export var ProfileShow = (function () {
+    function ProfileShow(auth) {
         this.auth = auth;
     }
-    NavigationComponent = __decorate([
+    ProfileShow = __decorate([
         Component({
-            selector: 'starterTemplateNavigation',
-            templateUrl: './navigation.component.html'
+            selector: 'profile_show',
+            templateUrl: './profile_show.template.html'
         }), 
         __metadata('design:paramtypes', [Auth])
-    ], NavigationComponent);
-    return NavigationComponent;
+    ], ProfileShow);
+    return ProfileShow;
 }());
-//# sourceMappingURL=navigation.component.js.map
+;
+//# sourceMappingURL=profile_show.component.js.map

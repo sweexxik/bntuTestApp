@@ -8,15 +8,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
+import { Auth } from './auth/auth.service';
 export var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(auth) {
+        this.auth = auth;
     }
     AppComponent = __decorate([
         Component({
             selector: 'my-app',
+            providers: [Auth],
             templateUrl: './app.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [Auth])
     ], AppComponent);
     return AppComponent;
 }());
