@@ -1,0 +1,6 @@
+<div *ngIf="auth.authenticated() && auth.userProfile">
+    <h4>You are logged in</h4>
+    <h4>{{message}}</h4>
+
+</div>
+<h4 *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
