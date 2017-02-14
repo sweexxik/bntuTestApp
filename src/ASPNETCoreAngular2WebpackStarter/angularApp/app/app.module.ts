@@ -16,6 +16,10 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { ProfileEdit } from "./components/profile/profile_edit.component";
 import { ProfileShow } from "./components/profile/profile_show.component";
 import { FormsModule }   from '@angular/forms';
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { SummationComponent } from "./components/dashboard/summation/summation.component";
+import { DashboardMainComponent } from "./components/dashboard/main/dashboard-main.component";
+import { SubtractionComponent } from "./components/dashboard/subtraction/subtraction.component";
 
 @NgModule({
     imports: [
@@ -35,7 +39,11 @@ import { FormsModule }   from '@angular/forms';
         HomeComponent,
         AboutComponent,
         FooterComponent,
-        NavigationComponent
+        NavigationComponent,
+        DashboardComponent,
+        DashboardMainComponent,
+        SummationComponent,
+        SubtractionComponent
     ],
 
     providers: [
