@@ -16,24 +16,9 @@ export var DataService = (function () {
         var _this = this;
         this.http = http;
         this.configuration = configuration;
-        this.actionUrl = 'stub';
-        this.GetSummationResult = function (request) {
-            return _this.http.post(_this.summationUrl, JSON.stringify(request), { headers: _this.headers }).map(function (res) { return res.json(); });
-        };
-        // sample http requests
-        this.GetAll = function () {
-            return _this.http.get(_this.actionUrl).map(function (response) { return response.json(); });
-        };
-        this.GetSingle = function (id) {
-            return _this.http.get(_this.actionUrl + id).map(function (res) { return res.json(); });
-        };
-        this.Update = function (id, itemToUpdate) {
-            return _this.http
-                .put(_this.actionUrl + id, JSON.stringify(itemToUpdate), { headers: _this.headers })
+        this.getSummationResult = function (request) {
+            return _this.http.post(_this.summationUrl, JSON.stringify(request), { headers: _this.headers })
                 .map(function (res) { return res.json(); });
-        };
-        this.Delete = function (id) {
-            return _this.http.delete(_this.actionUrl + id);
         };
         this.summationUrl = configuration.ServerWithApiUrl + 'summation/';
         this.subtractionUrl = configuration.ServerWithApiUrl + 'subtraction/';

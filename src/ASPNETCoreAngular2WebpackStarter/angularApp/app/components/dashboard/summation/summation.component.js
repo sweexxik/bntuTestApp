@@ -22,7 +22,7 @@ export var SummationComponent = (function () {
     }
     SummationComponent.prototype.calculate = function () {
         var _this = this;
-        this.dataService.GetSummationResult({ First: this.firstArg, Second: this.secondArg })
+        this.dataService.getSummationResult({ First: this.firstArg, Second: this.secondArg })
             .subscribe(function (data) { return _this.result = data; }, function (error) { return function () {
             _this.toasterService.pop('error', 'Damn', 'Something went wrong...');
         }; }, function () {
