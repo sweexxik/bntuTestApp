@@ -12,29 +12,31 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Configuration } from '../app.constants';
 export var DataService = (function () {
-    function DataService(_http, _configuration) {
+    function DataService(http, configuration) {
         var _this = this;
-        this._http = _http;
-        this._configuration = _configuration;
+        this.http = http;
+        this.configuration = configuration;
+        this.actionUrl = 'stub';
+        this.GetSummationResult = function (request) {
+            return _this.http.post(_this.summationUrl, JSON.stringify(request), { headers: _this.headers }).map(function (res) { return res.json(); });
+        };
+        // sample http requests
         this.GetAll = function () {
-            return _this._http.get(_this.actionUrl).map(function (response) { return response.json(); });
+            return _this.http.get(_this.actionUrl).map(function (response) { return response.json(); });
         };
         this.GetSingle = function (id) {
-            return _this._http.get(_this.actionUrl + id).map(function (res) { return res.json(); });
-        };
-        this.Add = function (itemName) {
-            var toAdd = JSON.stringify({ ItemName: itemName });
-            return _this._http.post(_this.actionUrl, toAdd, { headers: _this.headers }).map(function (res) { return res.json(); });
+            return _this.http.get(_this.actionUrl + id).map(function (res) { return res.json(); });
         };
         this.Update = function (id, itemToUpdate) {
-            return _this._http
+            return _this.http
                 .put(_this.actionUrl + id, JSON.stringify(itemToUpdate), { headers: _this.headers })
                 .map(function (res) { return res.json(); });
         };
         this.Delete = function (id) {
-            return _this._http.delete(_this.actionUrl + id);
+            return _this.http.delete(_this.actionUrl + id);
         };
-        this.actionUrl = _configuration.ServerWithApiUrl + 'values/';
+        this.summationUrl = configuration.ServerWithApiUrl + 'summation/';
+        this.subtractionUrl = configuration.ServerWithApiUrl + 'subtraction/';
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Accept', 'application/json');
@@ -45,4 +47,4 @@ export var DataService = (function () {
     ], DataService);
     return DataService;
 }());
-//# sourceMappingURL=DataService.js.map
+//# sourceMappingURL=dataService.js.map

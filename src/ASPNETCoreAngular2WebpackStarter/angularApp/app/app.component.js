@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { Auth } from './auth/auth.service';
+import { DataService } from "./services/dataService";
 export var AppComponent = (function () {
     function AppComponent(auth) {
         this.auth = auth;
@@ -16,7 +17,10 @@ export var AppComponent = (function () {
     AppComponent = __decorate([
         Component({
             selector: 'my-app',
-            providers: [Auth],
+            providers: [
+                Auth,
+                DataService
+            ],
             templateUrl: './app.component.html'
         }), 
         __metadata('design:paramtypes', [Auth])
