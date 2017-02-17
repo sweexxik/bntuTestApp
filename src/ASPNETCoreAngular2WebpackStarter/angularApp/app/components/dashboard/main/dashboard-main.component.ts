@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-declare var $: any;
+import { DashboardAction } from "../../../classes";
+
 @Component({
     selector: 'dashboard-main',
     templateUrl: 'dashboard-main.component.html'
@@ -8,14 +9,24 @@ declare var $: any;
 export class DashboardMainComponent implements OnInit {
 
     public message: string;
-    public links: Array<string> = [];
+    public actions: Array<DashboardAction> = [{
+        Title: 'Summation',
+        Description: 'Perfom Summation of two items',
+        RelativeLink: 'summation'
+    }, {
+        Title: 'Subtraction',
+        Description: 'Perfom subraction of two items',
+        RelativeLink: 'subtraction'
+    }, {
+        Title: 'Multiplication',
+        Description: 'Perfom multiplication of two items',
+        RelativeLink: 'multiplication'
+    }];
 
     constructor() {
-        this.message = 'dashboard';
     }
 
     ngOnInit() {
-        this.links = ['summation', 'subtraction']
     }
 
     ngAfterViewInit(){

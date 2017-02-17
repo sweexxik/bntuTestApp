@@ -3,6 +3,8 @@ export interface SummationRequest {
     Second: number
 }
 
-export interface ActionDescription {
-
+export interface DashboardAction {
+    Title: string;
+    Description: string;
+    RelativeLink: string;
 }

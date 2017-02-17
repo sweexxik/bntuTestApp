@@ -10,11 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 export var DashboardMainComponent = (function () {
     function DashboardMainComponent() {
-        this.links = [];
-        this.message = 'dashboard';
+        this.actions = [{
+                Title: 'Summation',
+                Description: 'Perfom Summation of two items',
+                RelativeLink: 'summation'
+            }, {
+                Title: 'Subtraction',
+                Description: 'Perfom subraction of two items',
+                RelativeLink: 'subtraction'
+            }, {
+                Title: 'Multiplication',
+                Description: 'Perfom multiplication of two items',
+                RelativeLink: 'multiplication'
+            }];
     }
     DashboardMainComponent.prototype.ngOnInit = function () {
-        this.links = ['summation', 'subtraction'];
     };
     DashboardMainComponent.prototype.ngAfterViewInit = function () {
     };

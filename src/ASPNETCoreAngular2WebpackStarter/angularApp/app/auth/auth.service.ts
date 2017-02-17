@@ -1,4 +1,5 @@
 import { Injectable }      from '@angular/core';
+import { Router }          from '@angular/router';
 import { tokenNotExpired } from 'angular2-jwt';
 import { myConfig }        from './auth.config';
 
@@ -8,20 +9,19 @@ declare var Auth0Lock: any;
 @Injectable()
 export class Auth {
     // Configure Auth0
-    lock = new Auth0Lock(myConfig.clientID, myConfig.domain, {});
-    // additional params
     // https://auth0.com/docs/quickstart/spa/angular2/04-user-profile
+    private lock = new Auth0Lock(myConfig.clientID, myConfig.domain, {});
 
     userProfile: any;
 
-    constructor() {
+        constructor(private router: Router) {
         this.userProfile = JSON.parse(localStorage.getItem('profile'));
 
         // Add callback for lock `authenticated` event
         this.lock.on('authenticated', (authResult: any) => {
-
             localStorage.setItem('id_token', authResult.idToken);
-
+            debugger;
+            this.router.navigate(['/dashboard']);
             this.lock.getProfile(authResult.idToken, (error: any, profile: any) => {
                 if (error) {
                     alert(error);

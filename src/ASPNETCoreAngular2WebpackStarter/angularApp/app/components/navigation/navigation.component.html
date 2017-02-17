@@ -15,7 +15,7 @@
                 <li routerLinkActive="active">
                     <a routerLink="/home" class="btn">Home</a>
                 </li>
-                <li routerLinkActive="active">
+                <li routerLinkActive="active" *ngIf="auth.authenticated()">
                     <a routerLink="/dashboard" class="btn">Dashboard</a>
                 </li>
                 <li routerLinkActive="active" *ngIf="auth.authenticated()">
