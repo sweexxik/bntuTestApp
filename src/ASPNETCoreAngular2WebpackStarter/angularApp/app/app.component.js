@@ -10,20 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { Auth } from './auth/auth.service';
 import { DataService } from "./services/dataService";
+import { AppReadyEvent } from "./splashscreen/app-ready-event";
 export var AppComponent = (function () {
-    function AppComponent(auth) {
+    function AppComponent(auth, appReadyEvent) {
         this.auth = auth;
+        appReadyEvent.trigger();
     }
     AppComponent = __decorate([
         Component({
             selector: 'my-app',
             providers: [
                 Auth,
-                DataService
+                DataService,
+                AppReadyEvent
             ],
             templateUrl: './app.component.html'
         }), 
-        __metadata('design:paramtypes', [Auth])
+        __metadata('design:paramtypes', [Auth, AppReadyEvent])
     ], AppComponent);
     return AppComponent;
 }());

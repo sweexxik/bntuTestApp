@@ -8,14 +8,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { tokenNotExpired } from 'angular2-jwt';
 import { myConfig } from './auth.config';
 export var Auth = (function () {
-    function Auth() {
+    function Auth(router) {
         var _this = this;
-        // Configure Auth0
+        this.router = router;
+        // Configure Auth0 https://auth0.com/docs/quickstart/spa/angular2/04-user-profile
         this.lock = new Auth0Lock(myConfig.clientID, myConfig.domain, {});
+        this.defaultRedirectUrl = '/dashboard';
         this.userProfile = JSON.parse(localStorage.getItem('profile'));
+        this.router.events.subscribe(function (val) {
+        });
         // Add callback for lock `authenticated` event
         this.lock.on('authenticated', function (authResult) {
             localStorage.setItem('id_token', authResult.idToken);
@@ -26,30 +31,36 @@ export var Auth = (function () {
                 }
                 localStorage.setItem('profile', JSON.stringify(profile));
                 _this.userProfile = profile;
+                var redirectUrl = localStorage.getItem('redirect_url');
+                redirectUrl = redirectUrl ? redirectUrl : _this.defaultRedirectUrl;
+                _this.router.navigate([redirectUrl]);
+                localStorage.removeItem('redirect_url');
             });
         });
     }
+    Auth.prototype.isAdmin = function () {
+        return this.userProfile && this.userProfile.app_metadata
+            && this.userProfile.app_metadata.roles
+            && this.userProfile.app_metadata.roles.indexOf('admin') > -1;
+    };
     Auth.prototype.login = function () {
-        // Call the show method to display the widget.
         this.lock.show();
     };
     ;
     Auth.prototype.authenticated = function () {
-        // Check if there's an unexpired JWT
-        // It searches for an item in localStorage with key == 'id_token'
         return tokenNotExpired();
     };
     ;
     Auth.prototype.logout = function () {
-        // Remove token from localStorage
         localStorage.removeItem('id_token');
         localStorage.removeItem('profile');
+        localStorage.removeItem('redirect_url');
         this.userProfile = undefined;
     };
     ;
     Auth = __decorate([
         Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [Router])
     ], Auth);
     return Auth;
 }());

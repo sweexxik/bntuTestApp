@@ -2,7 +2,7 @@ import {Component}            from '@angular/core';
 import {AuthHttp}             from 'angular2-jwt';
 import {Router}               from '@angular/router';
 import 'rxjs/add/operator/map';
-import {Auth} from "../../auth/auth.service";
+import {AuthService} from "../../auth/auth.service";
 import {myConfig} from "../../auth/auth.config";
 
 @Component({
@@ -13,7 +13,7 @@ import {myConfig} from "../../auth/auth.config";
 export class ProfileEdit {
     address: String
 
-    constructor(private auth: Auth, private authHttp: AuthHttp, private router: Router) {
+    constructor(private auth: AuthService, private authHttp: AuthHttp, private router: Router) {
         if (auth.userProfile.user_metadata && auth.userProfile.user_metadata.address) {
             this.address = auth.userProfile.user_metadata.address;
         }

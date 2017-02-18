@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { Configuration } from './app.constants';
-import { routing } from './app.routes';
+import {routing, appRoutingProviders} from './app.routes';
 import { HttpModule } from '@angular/http';
 import { AUTH_PROVIDERS } from 'angular2-jwt';
 import { HomeComponent } from './components/home/home.component';
@@ -20,6 +20,10 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { SummationComponent } from "./components/dashboard/summation/summation.component";
 import { DashboardMainComponent } from "./components/dashboard/main/dashboard-main.component";
 import { SubtractionComponent } from "./components/dashboard/subtraction/subtraction.component";
+import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
+import {AdminComponent} from "./components/admin/admin.component";
+import {UnauthorizedComponent} from "./components/page-not-found/unauthorized.component";
+import {AuthService} from "./auth/auth.service";
 
 @NgModule({
     imports: [
@@ -28,7 +32,7 @@ import { SubtractionComponent } from "./components/dashboard/subtraction/subtrac
         HttpModule,
         ToasterModule,
         FormsModule,
-        SlimLoadingBarModule.forRoot()
+        SlimLoadingBarModule.forRoot(),
     ],
 
     declarations: [
@@ -43,13 +47,18 @@ import { SubtractionComponent } from "./components/dashboard/subtraction/subtrac
         DashboardComponent,
         DashboardMainComponent,
         SummationComponent,
-        SubtractionComponent
+        SubtractionComponent,
+        PageNotFoundComponent,
+        AdminComponent,
+        UnauthorizedComponent
     ],
 
     providers: [
         Configuration,
         DataService,
-        AUTH_PROVIDERS
+        AuthService,
+        AUTH_PROVIDERS,
+        appRoutingProviders
     ],
 
     bootstrap: [AppComponent]

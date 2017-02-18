@@ -1,5 +1,5 @@
 import { Component }         from '@angular/core';
-import {Auth} from "../../auth/auth.service";
+import {AuthService} from "../../auth/auth.service";
 
 @Component({
   selector: 'profile_show',
@@ -7,5 +7,5 @@ import {Auth} from "../../auth/auth.service";
 })
 
 export class ProfileShow {
-  constructor(private auth: Auth) {}
+  constructor(private auth: AuthService) {}
 };

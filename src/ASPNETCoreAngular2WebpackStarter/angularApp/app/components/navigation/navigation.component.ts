@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Auth } from '../../auth/auth.service'
+import { AuthService } from '../../auth/auth.service'
 
 @Component({
     selector: 'starterTemplateNavigation',
@@ -7,6 +7,6 @@ import { Auth } from '../../auth/auth.service'
 })
 
 export class NavigationComponent {
-    constructor(private auth: Auth){
+    constructor(private auth: AuthService){
     }
 }

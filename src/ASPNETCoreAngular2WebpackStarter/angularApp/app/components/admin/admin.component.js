@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { Auth } from "../../auth/auth.service";
-export var DashboardComponent = (function () {
-    function DashboardComponent() {
+export var AdminComponent = (function () {
+    function AdminComponent(auth) {
+        this.auth = auth;
     }
-    DashboardComponent = __decorate([
+    AdminComponent = __decorate([
         Component({
-            selector: 'dashboard',
-            templateUrl: 'dashboard.component.html',
-            providers: [Auth]
+            selector: 'admin',
+            templateUrl: './admin.component.html'
         }), 
-        __metadata('design:paramtypes', [])
-    ], DashboardComponent);
-    return DashboardComponent;
+        __metadata('design:paramtypes', [Auth])
+    ], AdminComponent);
+    return AdminComponent;
 }());
-//# sourceMappingURL=dashboard.component.js.map
+;
+//# sourceMappingURL=admin.component.js.map

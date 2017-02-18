@@ -8,18 +8,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { Auth } from "../../auth/auth.service";
-export var DashboardComponent = (function () {
-    function DashboardComponent() {
+export var UnauthorizedComponent = (function () {
+    function UnauthorizedComponent() {
     }
-    DashboardComponent = __decorate([
+    UnauthorizedComponent = __decorate([
         Component({
-            selector: 'dashboard',
-            templateUrl: 'dashboard.component.html',
-            providers: [Auth]
+            selector: 'no-content',
+            template: "\n    <div>\n      <h1>Unauthorized: you are not allowed to see this content</h1>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], DashboardComponent);
-    return DashboardComponent;
+    ], UnauthorizedComponent);
+    return UnauthorizedComponent;
 }());
-//# sourceMappingURL=dashboard.component.js.map
+//# sourceMappingURL=unauthorized.component.js.map
