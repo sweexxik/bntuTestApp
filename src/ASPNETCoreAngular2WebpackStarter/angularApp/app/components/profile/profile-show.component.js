@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { AuthService } from "../../auth/auth.service";
-export var HomeComponent = (function () {
-    function HomeComponent(auth) {
+export var ProfileShow = (function () {
+    function ProfileShow(auth) {
         this.auth = auth;
     }
-    HomeComponent = __decorate([
+    ProfileShow = __decorate([
         Component({
-            selector: 'home',
-            templateUrl: './home.component.html'
+            selector: 'profile_show',
+            templateUrl: 'profile-show.component.html'
         }), 
         __metadata('design:paramtypes', [AuthService])
-    ], HomeComponent);
-    return HomeComponent;
+    ], ProfileShow);
+    return ProfileShow;
 }());
-//# sourceMappingURL=home.component.js.map
+;
+//# sourceMappingURL=profile-show.component.js.map

@@ -10,18 +10,21 @@ export class AuthGuardService implements CanActivate {
 
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         debugger;
+        return this.doCheck(state);
+    }
+
+    private doCheck(state: RouterStateSnapshot){
         if(this.auth.authenticated()){
-            if(this.auth.isAdmin()){
-                return true;
-            } else {
-                this.router.navigate(['unauthorized']);
-                return false;
-            }
+            // if(this.auth.isAdmin()){
+            return true;
+            // } else {
+            //     this.router.navigate(['unauthorized']);
+            //     return false;
+            // }
         } else {
-            // Save URL to redirect to after login and fetching profile to get roles
-            localStorage.setItem('redirect_url', state.url);
+            debugger;
+            localStorage.setItem('redirect_url', 'home');
             this.auth.login();
-            this.router.navigate(['']);
             return false;
         }
     }

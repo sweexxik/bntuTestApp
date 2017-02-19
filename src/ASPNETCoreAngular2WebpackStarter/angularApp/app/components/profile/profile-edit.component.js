@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 import { AuthHttp } from 'angular2-jwt';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
-import { Auth } from "../../auth/auth.service";
+import { AuthService } from "../../auth/auth.service";
 import { myConfig } from "../../auth/auth.config";
 export var ProfileEdit = (function () {
     function ProfileEdit(auth, authHttp, router) {
@@ -45,10 +45,10 @@ export var ProfileEdit = (function () {
     ProfileEdit = __decorate([
         Component({
             selector: 'profile',
-            templateUrl: './profile_edit.template.html'
+            templateUrl: 'profile-edit.component.html'
         }), 
-        __metadata('design:paramtypes', [Auth, AuthHttp, Router])
+        __metadata('design:paramtypes', [AuthService, AuthHttp, Router])
     ], ProfileEdit);
     return ProfileEdit;
 }());
-//# sourceMappingURL=profile_edit.component.js.map
+//# sourceMappingURL=profile-edit.component.js.map

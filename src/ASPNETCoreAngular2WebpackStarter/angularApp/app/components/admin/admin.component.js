@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { Auth } from "../../auth/auth.service";
+import { AuthService } from "../../auth/auth.service";
 export var AdminComponent = (function () {
     function AdminComponent(auth) {
         this.auth = auth;
@@ -18,7 +18,7 @@ export var AdminComponent = (function () {
             selector: 'admin',
             templateUrl: './admin.component.html'
         }), 
-        __metadata('design:paramtypes', [Auth])
+        __metadata('design:paramtypes', [AuthService])
     ], AdminComponent);
     return AdminComponent;
 }());

@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { Auth } from '../../auth/auth.service';
+import { AuthService } from '../../auth/auth.service';
 export var NavigationComponent = (function () {
     function NavigationComponent(auth) {
         this.auth = auth;
@@ -18,7 +18,7 @@ export var NavigationComponent = (function () {
             selector: 'starterTemplateNavigation',
             templateUrl: './navigation.component.html'
         }), 
-        __metadata('design:paramtypes', [Auth])
+        __metadata('design:paramtypes', [AuthService])
     ], NavigationComponent);
     return NavigationComponent;
 }());

@@ -22,8 +22,8 @@ import { DataService } from './services/DataService';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { ProfileComponent } from "./components/profile/profile.component";
-import { ProfileEdit } from "./components/profile/profile_edit.component";
-import { ProfileShow } from "./components/profile/profile_show.component";
+import { ProfileEdit } from "./components/profile/profile-edit.component";
+import { ProfileShow } from "./components/profile/profile-show.component";
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { SummationComponent } from "./components/dashboard/summation/summation.component";
@@ -32,6 +32,8 @@ import { SubtractionComponent } from "./components/dashboard/subtraction/subtrac
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { AdminComponent } from "./components/admin/admin.component";
 import { UnauthorizedComponent } from "./components/page-not-found/unauthorized.component";
+import { AuthService } from "./auth/auth.service";
+import { LoginComponent } from "./components/login/login.component";
 export var AppModule = (function () {
     function AppModule() {
     }
@@ -60,11 +62,13 @@ export var AppModule = (function () {
                 SubtractionComponent,
                 PageNotFoundComponent,
                 AdminComponent,
-                UnauthorizedComponent
+                UnauthorizedComponent,
+                LoginComponent
             ],
             providers: [
                 Configuration,
                 DataService,
+                AuthService,
                 AUTH_PROVIDERS,
                 appRoutingProviders
             ],

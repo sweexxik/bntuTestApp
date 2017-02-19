@@ -25,7 +25,7 @@
                     <a routerLink="/about" class="btn">About</a>
                 </li>
                 <li routerLinkActive="active" *ngIf="!auth.authenticated()">
-                    <a (click)="auth.login()" class="btn">Log In</a>
+                    <a routerLink="/login" class="btn">Log In</a>
                 </li>
                 <li routerLinkActive="active" *ngIf="auth.authenticated()">
                     <a (click)="auth.logout()" class="btn">Log Out</a>

@@ -8,25 +8,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { Auth } from './auth/auth.service';
+import { AuthService } from './auth/auth.service';
 import { DataService } from "./services/dataService";
 import { AppReadyEvent } from "./splashscreen/app-ready-event";
+import { AuthGuardService } from "./auth/auth.guard";
 export var AppComponent = (function () {
-    function AppComponent(auth, appReadyEvent) {
-        this.auth = auth;
+    function AppComponent(appReadyEvent) {
         appReadyEvent.trigger();
     }
     AppComponent = __decorate([
         Component({
             selector: 'my-app',
             providers: [
-                Auth,
+                AuthService,
                 DataService,
-                AppReadyEvent
+                AppReadyEvent,
+                AuthGuardService
             ],
             templateUrl: './app.component.html'
         }), 
-        __metadata('design:paramtypes', [Auth, AppReadyEvent])
+        __metadata('design:paramtypes', [AppReadyEvent])
     ], AppComponent);
     return AppComponent;
 }());

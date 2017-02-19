@@ -6,10 +6,12 @@ import { DashboardRoutes } from "./components/dashboard/dashboard.routes";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { AuthGuardService } from './auth/auth.guard';
 import { UnauthorizedComponent } from "./components/page-not-found/unauthorized.component";
+import { LoginComponent } from "./components/login/login.component";
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full', canActivate: [AuthGuardService] },
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   ...ProfileRoutes,
   ...DashboardRoutes,
   { path: 'about', component: AboutComponent },

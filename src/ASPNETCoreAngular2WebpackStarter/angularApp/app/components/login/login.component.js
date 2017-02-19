@@ -8,19 +8,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { Auth } from "../../auth/auth.service";
-export var ProfileShow = (function () {
-    function ProfileShow(auth) {
+import { AuthService } from '../../auth/auth.service';
+export var LoginComponent = (function () {
+    function LoginComponent(auth) {
         this.auth = auth;
+        auth.login();
     }
-    ProfileShow = __decorate([
+    LoginComponent = __decorate([
         Component({
-            selector: 'profile_show',
-            templateUrl: './profile_show.template.html'
+            selector: 'login',
+            templateUrl: './login.component.html'
         }), 
-        __metadata('design:paramtypes', [Auth])
-    ], ProfileShow);
-    return ProfileShow;
+        __metadata('design:paramtypes', [AuthService])
+    ], LoginComponent);
+    return LoginComponent;
 }());
-;
-//# sourceMappingURL=profile_show.component.js.map
+//# sourceMappingURL=login.component.js.map

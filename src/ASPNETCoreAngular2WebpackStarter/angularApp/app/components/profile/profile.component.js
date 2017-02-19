@@ -14,7 +14,7 @@ export var ProfileComponent = (function () {
     ProfileComponent = __decorate([
         Component({
             selector: 'profile',
-            templateUrl: './profile.template.html'
+            templateUrl: 'profile.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], ProfileComponent);

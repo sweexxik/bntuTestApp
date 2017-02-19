@@ -13,7 +13,7 @@
     "tsc:w": "tsc -w"
   },
   "keywords": [],
-  "author": "Fabian Gosebrink",
+  "author": "Aleksey Rublevsky",
   "dependencies": {
     "@angular/common": "~2.4.3",
     "@angular/compiler": "~2.4.3",

@@ -8,15 +8,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { Auth } from "../../auth/auth.service";
 export var DashboardComponent = (function () {
     function DashboardComponent() {
     }
     DashboardComponent = __decorate([
         Component({
             selector: 'dashboard',
-            templateUrl: 'dashboard.component.html',
-            providers: [Auth]
+            templateUrl: 'dashboard.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], DashboardComponent);

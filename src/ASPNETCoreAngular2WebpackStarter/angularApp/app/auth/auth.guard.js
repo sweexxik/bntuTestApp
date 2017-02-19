@@ -9,35 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Auth } from './auth.service';
-export var AuthGuard = (function () {
-    function AuthGuard(auth, router) {
+import { AuthService } from './auth.service';
+export var AuthGuardService = (function () {
+    function AuthGuardService(auth, router) {
         this.auth = auth;
         this.router = router;
     }
-    AuthGuard.prototype.canActivate = function (next, state) {
+    AuthGuardService.prototype.canActivate = function (next, state) {
         debugger;
+        return this.doCheck(state);
+    };
+    AuthGuardService.prototype.doCheck = function (state) {
         if (this.auth.authenticated()) {
-            if (this.auth.isAdmin()) {
-                return true;
-            }
-            else {
-                this.router.navigate(['unauthorized']);
-                return false;
-            }
+            // if(this.auth.isAdmin()){
+            return true;
         }
         else {
-            // Save URL to redirect to after login and fetching profile to get roles
-            localStorage.setItem('redirect_url', state.url);
+            localStorage.setItem('redirect_url', 'home');
+            this.router.navigate(['login']);
             this.auth.login();
-            this.router.navigate(['']);
             return false;
         }
     };
-    AuthGuard = __decorate([
+    AuthGuardService = __decorate([
         Injectable(), 
-        __metadata('design:paramtypes', [Auth, Router])
-    ], AuthGuard);
-    return AuthGuard;
+        __metadata('design:paramtypes', [AuthService, Router])
+    ], AuthGuardService);
+    return AuthGuardService;
 }());
 //# sourceMappingURL=auth.guard.js.map

@@ -1,12 +1,12 @@
-import { ProfileEdit } from './profile_edit.component';
-import { ProfileShow } from './profile_show.component';
+import { ProfileEdit } from './profile-edit.component';
+import { ProfileShow } from './profile-show.component';
 import { ProfileComponent } from './profile.component';
-import { AuthGuard } from "../../auth/auth.guard";
+import { AuthGuardService } from "../../auth/auth.guard";
 export var ProfileRoutes = [
     {
         path: 'profile',
         component: ProfileComponent,
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuardService],
         children: [
             { path: 'edit', component: ProfileEdit },
             { path: '', component: ProfileShow }
