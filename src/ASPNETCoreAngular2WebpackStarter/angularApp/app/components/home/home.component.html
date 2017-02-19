@@ -1,6 +1,5 @@
-<div *ngIf="auth.authenticated() && auth.userProfile">
-   Hello
-    <a routerLink="/dashboard" class="btn">Dashboard</a>
+<div *ngIf="auth.authenticated()">
+   Hello ->  <a routerLink="/dashboard" class="btn">Dashboard</a>
 
 </div>
 <h4 *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>

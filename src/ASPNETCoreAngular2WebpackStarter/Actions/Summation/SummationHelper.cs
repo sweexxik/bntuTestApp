@@ -1,4 +1,4 @@
-﻿namespace ASPNETCoreAngular2Demo.Summation
+﻿namespace ASPNETCoreAngular2Demo.Actions.Summation
 {
     public static class SummationHelper
     {

@@ -4,11 +4,11 @@ import { SlimLoadingBarService } from "ng2-slim-loading-bar";
 import { DataService } from "../../../services/dataService";
 
 @Component({
-    selector: 'subtraction',
-    templateUrl: 'subtraction.component.html'
+    selector: 'multiplication',
+    templateUrl: 'multiplication.component.html'
 })
 
-export class SubtractionComponent {
+export class MultiplicationComponent {
 
     public result: number;
     public firstArg: number = 0;
@@ -21,7 +21,7 @@ export class SubtractionComponent {
     }
 
     private calculate(): void {
-        this.dataService.getSubtractionResult({Arg1: this.firstArg, Arg2: this.secondArg})
+        this.dataService.getMultiplicationResult({Arg1: this.firstArg, Arg2: this.secondArg})
             .subscribe(
                 data => this.result = <any>data,
                 error => () => {

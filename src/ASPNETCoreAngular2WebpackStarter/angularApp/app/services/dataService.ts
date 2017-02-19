@@ -3,18 +3,20 @@ import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { Configuration } from '../app.constants';
-import { SummationRequest } from "../classes";
+import {SummationRequest, SubtractionRequest} from "../classes";
 
 @Injectable()
 export class DataService {
     private summationUrl: string;
     private subtractionUrl: string;
+    private multiplicationUrl: string;
     private headers: Headers;
 
     constructor(private http: Http, private configuration: Configuration) {
 
         this.summationUrl = configuration.ServerWithApiUrl + 'summation/';
         this.subtractionUrl = configuration.ServerWithApiUrl + 'subtraction/';
+        this.multiplicationUrl = configuration.ServerWithApiUrl + 'multiplication/';
 
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');
@@ -23,6 +25,16 @@ export class DataService {
 
     public getSummationResult = (request: SummationRequest): Observable<Response> => {
         return this.http.post(this.summationUrl, JSON.stringify(request), { headers: this.headers })
+            .map(res => res.json());
+    }
+
+    public getSubtractionResult = (request: SubtractionRequest): Observable<Response> => {
+        return this.http.post(this.subtractionUrl, JSON.stringify(request), { headers: this.headers })
+            .map(res => res.json());
+    }
+
+    public getMultiplicationResult = (request: SubtractionRequest): Observable<Response> => {
+        return this.http.post(this.multiplicationUrl, JSON.stringify(request), { headers: this.headers })
             .map(res => res.json());
     }
 

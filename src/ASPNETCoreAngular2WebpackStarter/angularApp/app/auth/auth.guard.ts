@@ -23,7 +23,7 @@ export class AuthGuardService implements CanActivate {
             // }
         } else {
             debugger;
-            localStorage.setItem('redirect_url', 'home');
+            localStorage.setItem('redirect_url', state.url);
             this.auth.login();
             return false;
         }

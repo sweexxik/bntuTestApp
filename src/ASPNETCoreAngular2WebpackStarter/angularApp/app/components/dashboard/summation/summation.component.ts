@@ -21,7 +21,7 @@ export class SummationComponent {
         private toasterService: ToasterService) {}
 
     private calculate(): void {
-        this.dataService.getSummationResult({First: this.firstArg, Second: this.secondArg})
+        this.dataService.getSummationResult({Arg1: this.firstArg, Arg2: this.secondArg})
             .subscribe(
                 data => this.result = <any>data,
                 error => () => {

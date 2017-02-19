@@ -35,7 +35,13 @@ export class AuthService {
 
         // Add callback for lock `authenticated` event
         this.lock.on('authenticated', (authResult: any) => {
+            debugger;
             localStorage.setItem('id_token', authResult.idToken);
+
+            let redirectUrl: string = localStorage.getItem('redirect_url');
+            this.router.navigate([redirectUrl ? redirectUrl : this.defaultRedirectUrl]);
+            localStorage.removeItem('redirect_url');
+
             this.lock.getProfile(authResult.idToken, (error: any, profile: any) => {
                 if (error) {
                     console.log(error);
@@ -43,10 +49,6 @@ export class AuthService {
                 }
                 localStorage.setItem('profile', JSON.stringify(profile));
                 this.userProfile = profile;
-                let redirectUrl: string = localStorage.getItem('redirect_url');
-                redirectUrl = redirectUrl ? redirectUrl : this.defaultRedirectUrl;
-                this.router.navigate(['home']);
-                localStorage.removeItem('redirect_url');
             });
         });
     }

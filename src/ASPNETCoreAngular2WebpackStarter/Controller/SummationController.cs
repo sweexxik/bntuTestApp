@@ -1,4 +1,4 @@
-﻿using ASPNETCoreAngular2Demo.Summation;
+﻿using ASPNETCoreAngular2Demo.Actions.Summation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASPNETCoreAngular2Demo.Controller
@@ -9,7 +9,7 @@ namespace ASPNETCoreAngular2Demo.Controller
         [HttpPost]
         public IActionResult Post([FromBody]SummationRequest request)
         {
-            double result = SummationHelper.Calculate(request.First, request.Second);
+            double result = SummationHelper.Calculate(request.Arg1, request.Arg2);
             return new JsonResult(result);
         }
     }
