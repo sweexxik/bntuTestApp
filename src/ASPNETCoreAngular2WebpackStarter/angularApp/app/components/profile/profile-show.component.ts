@@ -3,7 +3,7 @@ import {AuthService} from "../../auth/auth.service";
 
 @Component({
   selector: 'profile_show',
-  templateUrl: 'profile-show.component.html'
+  templateUrl: './profile-show.component.html'
 })
 
 export class ProfileShow {

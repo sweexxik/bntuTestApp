@@ -7,7 +7,7 @@ import {myConfig} from "../../auth/auth.config";
 
 @Component({
     selector: 'profile',
-    templateUrl: 'profile-edit.component.html'
+    templateUrl: './profile-edit.component.html'
 })
 
 export class ProfileEdit {
