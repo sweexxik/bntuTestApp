@@ -16,7 +16,7 @@ export var ProfileShow = (function () {
     ProfileShow = __decorate([
         Component({
             selector: 'profile_show',
-            templateUrl: 'profile-show.component.html'
+            templateUrl: './profile-show.component.html'
         }), 
         __metadata('design:paramtypes', [AuthService])
     ], ProfileShow);

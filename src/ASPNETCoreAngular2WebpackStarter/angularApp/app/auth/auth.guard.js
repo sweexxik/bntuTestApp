@@ -25,8 +25,8 @@ export var AuthGuardService = (function () {
             return true;
         }
         else {
-            localStorage.setItem('redirect_url', 'home');
-            this.router.navigate(['login']);
+            debugger;
+            localStorage.setItem('redirect_url', state.url);
             this.auth.login();
             return false;
         }

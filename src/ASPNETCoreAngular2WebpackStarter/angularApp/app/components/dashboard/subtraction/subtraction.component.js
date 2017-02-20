@@ -8,16 +8,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
+import { ToasterService } from "angular2-toaster";
+import { SlimLoadingBarService } from "ng2-slim-loading-bar";
+import { DataService } from "../../../services/dataService";
 export var SubtractionComponent = (function () {
-    function SubtractionComponent() {
-        this.message = 'subtraction';
+    function SubtractionComponent(dataService, slimLoadingBarService, toasterService) {
+        this.dataService = dataService;
+        this.slimLoadingBarService = slimLoadingBarService;
+        this.toasterService = toasterService;
+        this.firstArg = 0;
+        this.secondArg = 0;
+        this.submitted = false;
     }
+    SubtractionComponent.prototype.calculate = function () {
+        var _this = this;
+        this.dataService.getSubtractionResult({ Arg1: this.firstArg, Arg2: this.secondArg })
+            .subscribe(function (data) { return _this.result = data; }, function (error) { return function () {
+            _this.toasterService.pop('error', 'Damn', 'Something went wrong...');
+        }; }, function () {
+            _this.submitted = true;
+            _this.toasterService.pop('success', 'Complete', 'Getting all values complete');
+            _this.slimLoadingBarService.complete();
+        });
+    };
+    SubtractionComponent.prototype.clearInputs = function () {
+        this.submitted = false;
+        this.firstArg = 0;
+        this.secondArg = 0;
+    };
     SubtractionComponent = __decorate([
         Component({
             selector: 'subtraction',
             templateUrl: 'subtraction.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [DataService, SlimLoadingBarService, ToasterService])
     ], SubtractionComponent);
     return SubtractionComponent;
 }());

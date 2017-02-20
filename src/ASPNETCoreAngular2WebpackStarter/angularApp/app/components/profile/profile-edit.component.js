@@ -45,7 +45,7 @@ export var ProfileEdit = (function () {
     ProfileEdit = __decorate([
         Component({
             selector: 'profile',
-            templateUrl: 'profile-edit.component.html'
+            templateUrl: './profile-edit.component.html'
         }), 
         __metadata('design:paramtypes', [AuthService, AuthHttp, Router])
     ], ProfileEdit);

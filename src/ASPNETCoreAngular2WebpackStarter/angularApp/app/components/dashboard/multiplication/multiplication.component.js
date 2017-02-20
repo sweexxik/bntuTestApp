@@ -8,11 +8,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { SlimLoadingBarService } from "ng2-slim-loading-bar";
 import { ToasterService } from "angular2-toaster";
+import { SlimLoadingBarService } from "ng2-slim-loading-bar";
 import { DataService } from "../../../services/dataService";
-export var SummationComponent = (function () {
-    function SummationComponent(dataService, slimLoadingBarService, toasterService) {
+export var MultiplicationComponent = (function () {
+    function MultiplicationComponent(dataService, slimLoadingBarService, toasterService) {
         this.dataService = dataService;
         this.slimLoadingBarService = slimLoadingBarService;
         this.toasterService = toasterService;
@@ -20,9 +20,9 @@ export var SummationComponent = (function () {
         this.secondArg = 0;
         this.submitted = false;
     }
-    SummationComponent.prototype.calculate = function () {
+    MultiplicationComponent.prototype.calculate = function () {
         var _this = this;
-        this.dataService.getSummationResult({ Arg1: this.firstArg, Arg2: this.secondArg })
+        this.dataService.getMultiplicationResult({ Arg1: this.firstArg, Arg2: this.secondArg })
             .subscribe(function (data) { return _this.result = data; }, function (error) { return function () {
             _this.toasterService.pop('error', 'Damn', 'Something went wrong...');
         }; }, function () {
@@ -31,18 +31,18 @@ export var SummationComponent = (function () {
             _this.slimLoadingBarService.complete();
         });
     };
-    SummationComponent.prototype.clearInputs = function () {
+    MultiplicationComponent.prototype.clearInputs = function () {
         this.submitted = false;
         this.firstArg = 0;
         this.secondArg = 0;
     };
-    SummationComponent = __decorate([
+    MultiplicationComponent = __decorate([
         Component({
-            selector: 'summation',
-            templateUrl: 'summation.component.html'
+            selector: 'multiplication',
+            templateUrl: 'multiplication.component.html'
         }), 
         __metadata('design:paramtypes', [DataService, SlimLoadingBarService, ToasterService])
-    ], SummationComponent);
-    return SummationComponent;
+    ], MultiplicationComponent);
+    return MultiplicationComponent;
 }());
-//# sourceMappingURL=summation.component.js.map
+//# sourceMappingURL=multiplication.component.js.map

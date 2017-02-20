@@ -7,7 +7,7 @@
     "start": "tsc && npm run startWebpackDevServer",
     "startWebpackDevServer": "webpack-dev-server --inline --progress --port 8080",
     "build": "SET NODE_ENV=development && webpack -d --color && dotnet run",
-    "buildProduction": "npm run ngc && SET NODE_ENV=production && webpack -d --color && dotnet run",
+    "buildProduction": "SET NODE_ENV=production && webpack -d --color && dotnet run",
     "lint": "tslint ./angularApp/**/*.ts -t verbose",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@types/jasmine": "2.5.41",
-    "@types/node": "7.0.0",
+    "@types/node": "^7.0.0",
     "angular-router-loader": "^0.5.0",
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^2.2.4",

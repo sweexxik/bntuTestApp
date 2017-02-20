@@ -1,3 +1,4 @@
+declare var $: any;
 export class StringUtils {
     public static concat(...args: any[]): string {
         if (args && args.length > 0) {

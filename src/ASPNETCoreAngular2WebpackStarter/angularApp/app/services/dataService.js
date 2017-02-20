@@ -20,8 +20,17 @@ export var DataService = (function () {
             return _this.http.post(_this.summationUrl, JSON.stringify(request), { headers: _this.headers })
                 .map(function (res) { return res.json(); });
         };
+        this.getSubtractionResult = function (request) {
+            return _this.http.post(_this.subtractionUrl, JSON.stringify(request), { headers: _this.headers })
+                .map(function (res) { return res.json(); });
+        };
+        this.getMultiplicationResult = function (request) {
+            return _this.http.post(_this.multiplicationUrl, JSON.stringify(request), { headers: _this.headers })
+                .map(function (res) { return res.json(); });
+        };
         this.summationUrl = configuration.ServerWithApiUrl + 'summation/';
         this.subtractionUrl = configuration.ServerWithApiUrl + 'subtraction/';
+        this.multiplicationUrl = configuration.ServerWithApiUrl + 'multiplication/';
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Accept', 'application/json');

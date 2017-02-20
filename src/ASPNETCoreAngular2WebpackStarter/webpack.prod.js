@@ -7,7 +7,7 @@ module.exports = {
     entry: {
         'polyfills': './angularApp/polyfills.ts',
         'vendor': './angularApp/vendor.ts',
-        'app': './angularApp/app/main-aot.ts'
+        'app': './angularApp/app/main.ts'
     },
     resolve: {
         extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']

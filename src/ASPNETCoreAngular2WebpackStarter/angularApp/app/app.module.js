@@ -34,6 +34,7 @@ import { AdminComponent } from "./components/admin/admin.component";
 import { UnauthorizedComponent } from "./components/page-not-found/unauthorized.component";
 import { AuthService } from "./auth/auth.service";
 import { LoginComponent } from "./components/login/login.component";
+import { MultiplicationComponent } from "./components/dashboard/multiplication/multiplication.component";
 export var AppModule = (function () {
     function AppModule() {
     }
@@ -63,7 +64,8 @@ export var AppModule = (function () {
                 PageNotFoundComponent,
                 AdminComponent,
                 UnauthorizedComponent,
-                LoginComponent
+                LoginComponent,
+                MultiplicationComponent
             ],
             providers: [
                 Configuration,

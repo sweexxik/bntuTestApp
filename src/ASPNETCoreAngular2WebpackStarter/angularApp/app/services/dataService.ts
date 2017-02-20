@@ -3,7 +3,7 @@ import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { Configuration } from '../app.constants';
-import {SummationRequest, SubtractionRequest} from "../classes";
+import {SummationRequest, SubtractionRequest, MultiplicationRequest} from "../classes";
 
 @Injectable()
 export class DataService {
@@ -33,7 +33,7 @@ export class DataService {
             .map(res => res.json());
     }
 
-    public getMultiplicationResult = (request: SubtractionRequest): Observable<Response> => {
+    public getMultiplicationResult = (request: MultiplicationRequest): Observable<Response> => {
         return this.http.post(this.multiplicationUrl, JSON.stringify(request), { headers: this.headers })
             .map(res => res.json());
     }
