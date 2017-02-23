@@ -1,0 +1,11 @@
+{
+  "Navigation": {
+    "appName": "ApplicationName",
+    "login":"Log In",
+    "logOut":"Log Out",
+    "home":"Home",
+    "dashboard":"Dashboard",
+    "about":"About",
+    "profile": "Profile"
+  }
+}
