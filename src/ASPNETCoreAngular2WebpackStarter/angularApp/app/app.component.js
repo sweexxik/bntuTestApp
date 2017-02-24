@@ -22,8 +22,8 @@ export var AppComponent = (function () {
     AppComponent.prototype.initTranslations = function () {
         this.translateService.addLangs(['en', 'ru']);
         this.translateService.setDefaultLang('ru');
-        // let browserLang = this.translateService.getBrowserLang();
-        // this.translateService.use(browserLang.match(/en|ru/) ? browserLang : 'en');
+        var browserLang = this.translateService.getBrowserLang();
+        this.translateService.use(browserLang.match(/en|ru/) ? browserLang : 'en');
     };
     AppComponent = __decorate([
         Component({

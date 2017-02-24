@@ -9,8 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { AuthService } from "../../auth/auth.service";
+import { TranslateService } from "ng2-translate";
 export var HomeComponent = (function () {
-    function HomeComponent(auth) {
+    function HomeComponent(translateService, auth) {
+        this.translateService = translateService;
         this.auth = auth;
     }
     HomeComponent = __decorate([
@@ -18,7 +20,7 @@ export var HomeComponent = (function () {
             selector: 'home',
             templateUrl: './home.component.html'
         }), 
-        __metadata('design:paramtypes', [AuthService])
+        __metadata('design:paramtypes', [TranslateService, AuthService])
     ], HomeComponent);
     return HomeComponent;
 }());

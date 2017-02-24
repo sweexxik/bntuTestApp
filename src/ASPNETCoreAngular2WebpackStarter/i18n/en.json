@@ -1,11 +1,14 @@
 {
   "Navigation": {
     "appName": "ApplicationName",
-    "login":"Log In",
-    "logout":"Log Out",
-    "home":"Home",
-    "dashboard":"Dashboard",
-    "about":"About",
+    "login": "Log In",
+    "logout": "Log Out",
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "about": "About",
     "profile": "Profile"
+  },
+  "Home": {
+    "isNotAuthenticatedMessage": "You are not logged in, please click 'Log in' button to login"
   }
 }

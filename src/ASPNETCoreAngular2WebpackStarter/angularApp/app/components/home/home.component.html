@@ -1,5 +1,6 @@
 <div *ngIf="auth.authenticated()">
-   Hello ->  <a routerLink="/dashboard" class="btn">Dashboard</a>
+   {{'Home.homeText' | translate}}
+   <a routerLink="/dashboard" class="btn">{{'Navigation.dashboard' | translate}}</a>
 
 </div>
-<h4 *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
+<h4 *ngIf="!auth.authenticated()">{{'Home.isNotAuthenticatedMessage' | translate}}</h4>

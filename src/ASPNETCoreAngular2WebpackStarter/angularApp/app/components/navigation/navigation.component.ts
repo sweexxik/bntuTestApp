@@ -3,7 +3,7 @@ import { AuthService } from '../../auth/auth.service'
 import { TranslateService} from "ng2-translate";
 
 @Component({
-    selector: 'starterTemplateNavigation',
+    selector: 'navigation',
     templateUrl: './navigation.component.html'
 })
 

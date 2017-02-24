@@ -4,7 +4,6 @@
             <a class="navbar-brand" routerLink="/home"> {{ 'Navigation.appName' | translate }}</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
             <li routerLinkActive="active">
                 <a routerLink="/home" class="btn">{{ 'Navigation.home' | translate }}</a>
             </li>
@@ -17,8 +16,6 @@
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <!--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
-            <!--<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
             <li *ngIf="!auth.authenticated()">
                 <a routerLink="/login" class="btn">{{ 'Navigation.login' | translate }}</a>
             </li>
@@ -26,9 +23,15 @@
                 <a (click)="auth.logout()" class="btn">{{ 'Navigation.logout' | translate }}</a>
             </li>
             <li>
-                <select #langSelect (change)="translateService.use(langSelect.value)">
-                    <option *ngFor="let lang of translateService.getLangs()" [value]="lang" [selected]="lang === translateService.currentLang">{{ lang }}</option>
-                </select>
+                <div class="form-group">
+                    <select class="form-control" #langSelect (change)="translateService.use(langSelect.value)">
+                        <option *ngFor="let lang of translateService.getLangs()"
+                                [value]="lang"
+                                [selected]="lang === translateService.currentLang">
+                            {{ lang }}
+                        </option>
+                    </select>
+                </div>
             </li>
         </ul>
     </div>

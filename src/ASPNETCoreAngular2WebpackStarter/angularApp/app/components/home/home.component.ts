@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from "../../auth/auth.service";
+import { TranslateService } from "ng2-translate";
 
 @Component({
     selector: 'home',
@@ -7,5 +8,5 @@ import { AuthService } from "../../auth/auth.service";
 })
 
 export class HomeComponent {
-    constructor(private auth: AuthService){}
+    constructor(private translateService: TranslateService, private auth: AuthService){}
 }
