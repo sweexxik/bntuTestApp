@@ -2,7 +2,7 @@
   "Navigation": {
     "appName": "<Имя приложения>",
     "login":"Войти",
-    "logOut":"Выйти",
+    "logout":"Выйти",
     "home":"Домой",
     "dashboard":"Панель задач",
     "about":"О приложении",

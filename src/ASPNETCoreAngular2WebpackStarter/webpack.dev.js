@@ -2,6 +2,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -27,6 +28,10 @@ module.exports = {
                     'awesome-typescript-loader',
                     'angular2-template-loader'
                 ]
+            },
+            {
+                test: /\.json$/,
+                use: 'json-loader'
             },
             {
                 test: /\.html$/,

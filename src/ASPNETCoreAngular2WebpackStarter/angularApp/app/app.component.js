@@ -12,10 +12,19 @@ import { AuthService } from './auth/auth.service';
 import { DataService } from "./services/dataService";
 import { AppReadyEvent } from "./splashscreen/app-ready-event";
 import { AuthGuardService } from "./auth/auth.guard";
+import { TranslateService } from "ng2-translate";
 export var AppComponent = (function () {
-    function AppComponent(appReadyEvent) {
+    function AppComponent(translateService, appReadyEvent) {
+        this.translateService = translateService;
         appReadyEvent.trigger();
+        this.initTranslations();
     }
+    AppComponent.prototype.initTranslations = function () {
+        this.translateService.addLangs(['en', 'ru']);
+        this.translateService.setDefaultLang('ru');
+        // let browserLang = this.translateService.getBrowserLang();
+        // this.translateService.use(browserLang.match(/en|ru/) ? browserLang : 'en');
+    };
     AppComponent = __decorate([
         Component({
             selector: 'my-app',
@@ -27,7 +36,7 @@ export var AppComponent = (function () {
             ],
             templateUrl: './app.component.html'
         }), 
-        __metadata('design:paramtypes', [AppReadyEvent])
+        __metadata('design:paramtypes', [TranslateService, AppReadyEvent])
     ], AppComponent);
     return AppComponent;
 }());

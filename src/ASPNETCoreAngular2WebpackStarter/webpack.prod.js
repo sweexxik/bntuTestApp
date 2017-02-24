@@ -2,6 +2,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -27,6 +28,10 @@ module.exports = {
                 loader: 'html-loader'
             },
             {
+                test: /\.json$/,
+                use: 'json-loader'
+            },
+            {
                 test: /\.(png|jpg|gif|ico|woff|woff2|ttf|svg|eot)$/,
                 loader: 'file-loader?name=assets/[name]-[hash:6].[ext]',
             },
@@ -42,6 +47,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new CopyWebpackPlugin([ { from: 'i18n', to: 'assets' } ]),
         new ExtractTextPlugin('css/[name]-[hash:6].bundle.css'),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']

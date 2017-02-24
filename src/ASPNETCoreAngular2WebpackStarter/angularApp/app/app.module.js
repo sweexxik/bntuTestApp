@@ -35,6 +35,7 @@ import { UnauthorizedComponent } from "./components/page-not-found/unauthorized.
 import { AuthService } from "./auth/auth.service";
 import { LoginComponent } from "./components/login/login.component";
 import { MultiplicationComponent } from "./components/dashboard/multiplication/multiplication.component";
+import { TranslateModule } from 'ng2-translate';
 export var AppModule = (function () {
     function AppModule() {
     }
@@ -47,6 +48,7 @@ export var AppModule = (function () {
                 ToasterModule,
                 FormsModule,
                 SlimLoadingBarModule.forRoot(),
+                TranslateModule.forRoot()
             ],
             declarations: [
                 AppComponent,
