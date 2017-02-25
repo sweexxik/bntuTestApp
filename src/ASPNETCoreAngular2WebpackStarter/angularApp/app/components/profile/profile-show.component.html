@@ -1,16 +1,18 @@
 <div *ngIf="auth.authenticated() && auth.userProfile">
-  <div class="row">
-    <div class="col-md-6">
-      <h3>Profile</h3>
-      <img [src]="auth.userProfile.picture" alt="" class="profile-img">
-      <p><strong>Name: </strong> {{auth.userProfile.name}}</p>
-      <p><strong>Email: </strong> {{auth.userProfile.email}}</p>
-      <p><strong>Nickname: </strong> {{auth.userProfile.nickname}}</p>
-      <p><strong>Created At: </strong> {{auth.userProfile.created_at}}</p>
-      <p><strong>Updated At: </strong> {{auth.userProfile.updated_at}}</p>
-      <p><strong>Address: </strong> {{auth.userProfile.user_metadata?.address}}</p>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h3>{{'Navigation.Profile' | translate}}</h3>
+            <p>
+                <img [src]="auth.userProfile.picture" alt="" class="profile-img">
+            </p>
+            <p><strong>{{'Profile.Name' | translate}}:</strong> {{auth.userProfile.name}}</p>
+            <p><strong>{{'Profile.Email' | translate}}: </strong> {{auth.userProfile.email}}</p>
+            <p><strong>{{'Profile.Nickname' | translate}}:</strong> {{auth.userProfile.nickname}}</p>
+            <p><strong>{{'Profile.Created' | translate}}:</strong> {{auth.userProfile.created_at}}</p>
+            <p><strong>{{'Profile.Updated' | translate}}:</strong> {{auth.userProfile.updated_at}}</p>
+            <p><strong>{{'Profile.Address' | translate}}:</strong> {{auth.userProfile.user_metadata?.address}}</p>
+        </div>
     </div>
-  </div>
-  <button class="btn btn-primary btn-margin" [routerLink]="['/profile/edit']">Edit address</button>
+    <button class="btn btn-primary btn-margin" [routerLink]="['/profile/edit']">{{'Common.Edit' | translate}}</button>
 </div>
-<h4 *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>

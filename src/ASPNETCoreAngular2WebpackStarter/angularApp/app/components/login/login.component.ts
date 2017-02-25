@@ -10,4 +10,8 @@ export class LoginComponent {
     constructor(private auth: AuthService){
         auth.login()
     }
+
+    private login(): void {
+        this.auth.login();
+    }
 }

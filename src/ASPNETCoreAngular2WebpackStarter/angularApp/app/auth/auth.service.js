@@ -21,7 +21,8 @@ export var AuthService = (function () {
             autoclose: true,
             auth: {
                 redirect: false,
-            } });
+            }
+        });
         this.defaultRedirectUrl = '/dashboard';
         this.userProfile = JSON.parse(localStorage.getItem('profile'));
         this.router.events.subscribe(function (val) {
@@ -34,7 +35,6 @@ export var AuthService = (function () {
         });
         // Add callback for lock `authenticated` event
         this.lock.on('authenticated', function (authResult) {
-            debugger;
             localStorage.setItem('id_token', authResult.idToken);
             var redirectUrl = localStorage.getItem('redirect_url');
             _this.router.navigate([redirectUrl ? redirectUrl : _this.defaultRedirectUrl]);

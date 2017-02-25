@@ -1,14 +1,45 @@
 {
   "Navigation": {
-    "appName": "ApplicationName",
-    "login": "Log In",
-    "logout": "Log Out",
-    "home": "Home",
-    "dashboard": "Dashboard",
-    "about": "About",
-    "profile": "Profile"
+    "AppName": "ApplicationName",
+    "Login": "Log In",
+    "Logout": "Log Out",
+    "Home": "Home",
+    "Dashboard": "Dashboard",
+    "About": "About",
+    "Profile": "Profile"
   },
   "Home": {
-    "isNotAuthenticatedMessage": "You are not logged in, please click 'Log in' button to login"
+    "IsNotAuthenticatedMessage": "You are not logged in, please click 'Log in' button to login",
+    "HomeMessage": "Home text placeholder"
+  },
+  "Dashboard": {
+    "ChooseFormula": "Choose an action in the list below.",
+    "Formulas": "CALCULATIONS"
+  },
+  "Common": {
+    "RequiredFiled": "This field is required",
+    "Continue": "Continue",
+    "Result": "Result",
+    "Clear": "Clear",
+    "Submit": "Submit",
+    "Edit": "Edit"
+  },
+  "Calculation":{
+    "Arg1": "The first argument",
+    "Arg2": "The second argument",
+    "Summation": "Summation",
+    "SummationDesc": "Perform summation of two numbers",
+    "Subtraction": "Subtraction",
+    "SubtractionDesc": "Perform subtraction of two number",
+    "Multiplication": "Multiplication",
+    "MultiplicationDesc": "Perform multiplication of two numbers"
+  },
+  "Profile": {
+    "Address":"Address",
+    "Created":"Created at",
+    "Updated":"Updated at",
+    "Nickname":"Nickname",
+    "Email":"E-mail",
+    "Name":"Name"
   }
 }

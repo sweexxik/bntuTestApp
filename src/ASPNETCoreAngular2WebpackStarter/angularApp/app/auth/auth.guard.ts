@@ -9,7 +9,6 @@ export class AuthGuardService implements CanActivate {
     constructor(private auth: AuthService, private router: Router) {}
 
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        debugger;
         return this.doCheck(state);
     }
 
@@ -22,7 +21,6 @@ export class AuthGuardService implements CanActivate {
             //     return false;
             // }
         } else {
-            debugger;
             localStorage.setItem('redirect_url', state.url);
             this.auth.login();
             return false;

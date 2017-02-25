@@ -1,6 +1,12 @@
 <div *ngIf="auth.authenticated()">
-   {{'Home.homeText' | translate}}
-   <a routerLink="/dashboard" class="btn">{{'Navigation.dashboard' | translate}}</a>
-
+    <p>{{'Home.HomeMessage' | translate}}</p>
+    <p>
+        <a routerLink="/dashboard" class="btn">
+            {{'Navigation.Dashboard' | translate}}
+        </a>
+    </p>
 </div>
-<h4 *ngIf="!auth.authenticated()">{{'Home.isNotAuthenticatedMessage' | translate}}</h4>
+<div *ngIf="!auth.authenticated()">
+    <h4>{{'Home.IsNotAuthenticatedMessage' | translate}}</h4>
+    <a class="btn" routerLink="/login">{{'Navigation.Login' | translate}}</a>
+</div>

@@ -16,7 +16,6 @@ export var NavigationComponent = (function () {
         this.auth = auth;
     }
     NavigationComponent.prototype.setEn = function () {
-        debugger;
         this.translateService.use('en');
     };
     NavigationComponent.prototype.setRu = function () {
@@ -24,7 +23,7 @@ export var NavigationComponent = (function () {
     };
     NavigationComponent = __decorate([
         Component({
-            selector: 'starterTemplateNavigation',
+            selector: 'navigation',
             templateUrl: './navigation.component.html'
         }), 
         __metadata('design:paramtypes', [TranslateService, AuthService])

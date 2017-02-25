@@ -12,7 +12,6 @@ export class NavigationComponent {
     }
 
     private setEn(): void {
-        debugger;
         this.translateService.use('en');
     }
 

@@ -16,7 +16,6 @@ export var AuthGuardService = (function () {
         this.router = router;
     }
     AuthGuardService.prototype.canActivate = function (next, state) {
-        debugger;
         return this.doCheck(state);
     };
     AuthGuardService.prototype.doCheck = function (state) {
@@ -25,7 +24,6 @@ export var AuthGuardService = (function () {
             return true;
         }
         else {
-            debugger;
             localStorage.setItem('redirect_url', state.url);
             this.auth.login();
             return false;

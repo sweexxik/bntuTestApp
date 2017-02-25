@@ -13,7 +13,7 @@ export var FooterComponent = (function () {
     }
     FooterComponent = __decorate([
         Component({
-            selector: 'starterTemplateFooter',
+            selector: 'app-footer',
             templateUrl: './footer.component.html'
         }), 
         __metadata('design:paramtypes', [])

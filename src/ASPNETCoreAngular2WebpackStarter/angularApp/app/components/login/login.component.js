@@ -14,6 +14,9 @@ export var LoginComponent = (function () {
         this.auth = auth;
         auth.login();
     }
+    LoginComponent.prototype.login = function () {
+        this.auth.login();
+    };
     LoginComponent = __decorate([
         Component({
             selector: 'login',

@@ -12,8 +12,9 @@ export class AuthService {
     private lock = new Auth0Lock(myConfig.clientID, myConfig.domain, {
         autoclose: true,
         auth: {
-        redirect: false,
-    }});
+            redirect: false,
+        }
+    });
 
     private defaultRedirectUrl: string = '/dashboard';
     public userProfile: any;
@@ -35,7 +36,7 @@ export class AuthService {
 
         // Add callback for lock `authenticated` event
         this.lock.on('authenticated', (authResult: any) => {
-            debugger;
+
             localStorage.setItem('id_token', authResult.idToken);
 
             let redirectUrl: string = localStorage.getItem('redirect_url');

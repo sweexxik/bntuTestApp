@@ -10,16 +10,16 @@ export class DashboardMainComponent implements OnInit {
 
     public message: string;
     public actions: Array<DashboardAction> = [{
-        Title: 'Summation',
-        Description: 'Perfom Summation of two items',
+        Title: 'Calculation.Summation',
+        Description: 'Calculation.SummationDesc',
         RelativeLink: 'summation'
     }, {
-        Title: 'Subtraction',
-        Description: 'Perfom subraction of two items',
+        Title: 'Calculation.Subtraction',
+        Description: 'Calculation.SubtractionDesc',
         RelativeLink: 'subtraction'
     }, {
-        Title: 'Multiplication',
-        Description: 'Perfom multiplication of two items',
+        Title: 'Calculation.Multiplication',
+        Description: 'Calculation.MultiplicationDesc',
         RelativeLink: 'multiplication'
     }];
 
