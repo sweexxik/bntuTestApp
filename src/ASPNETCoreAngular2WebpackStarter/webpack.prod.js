@@ -5,6 +5,7 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var webpackUglifyJsPlugin = require('webpack-uglify-js-plugin');
 var path = require('path');
+var helpers = require('./helpers');
 
 module.exports = {
     entry: {
@@ -83,6 +84,17 @@ module.exports = {
             jQuery: 'jquery',
             $: 'jquery',
             jquery: 'jquery'
+        }),
+        new webpack.ContextReplacementPlugin(
+            // The (\\|\/) piece accounts for path separators in *nix and Windows
+            /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+            helpers.root('./angularApp'), // location of your src
+            {} // a map of your routes
+        ),
+        new webpack.LoaderOptionsPlugin({
+            htmlLoader: {
+                minimize: false // workaround for ng2
+            }
         })
     ]
 };

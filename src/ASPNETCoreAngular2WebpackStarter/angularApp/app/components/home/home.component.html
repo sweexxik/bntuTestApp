@@ -1,5 +1,6 @@
 <div *ngIf="auth.authenticated()">
     <p>{{'Home.HomeMessage' | translate}}</p>
+
     <a routerLink="/dashboard" class="btn">{{'Navigation.Dashboard' | translate}}</a>
 </div>
 <div *ngIf="!auth.authenticated()">
