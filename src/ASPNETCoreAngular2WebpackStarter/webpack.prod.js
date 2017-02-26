@@ -3,6 +3,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var webpackUglifyJsPlugin = require('webpack-uglify-js-plugin');
+var path = require('path');
 
 module.exports = {
     entry: {
@@ -47,7 +49,17 @@ module.exports = {
         ]
     },
     plugins: [
-        new CopyWebpackPlugin([ { from: 'i18n', to: 'assets' } ]),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compressor: {
+                warnings: false
+            }
+        }),
         new ExtractTextPlugin('css/[name]-[hash:6].bundle.css'),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
@@ -57,6 +69,7 @@ module.exports = {
                 './wwwroot/js/',
                 './wwwroot/css/',
                 './wwwroot/assets/',
+                './wwwroot/i18n/',
                 './wwwroot/index.html'
             ]
         ),
@@ -65,15 +78,7 @@ module.exports = {
             template: './angularApp/index.html',
             inject: 'body'
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            output: {
-                comments: false
-            },
-            sourceMap: false
-        }),
+
         new webpack.ProvidePlugin({
             jQuery: 'jquery',
             $: 'jquery',
