@@ -7,7 +7,7 @@
     "start": "tsc && npm run startWebpackDevServer",
     "startWebpackDevServer": "webpack-dev-server --inline --progress --port 8080",
     "build": "SET NODE_ENV=development && webpack -d --color && dotnet run",
-    "buildProd": "SET NODE_ENV=production && webpack -p --color",
+    "buildProd": "SET NODE_ENV=production && webpack -p --color gulp",
     "lint": "tslint ./angularApp/**/*.ts -t verbose",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
